@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Change Image with Button Click</title>
+<style>
+    img {
+        width: 300px;
+        height: auto;
+    }
+</style>
+</head>
+<body>
+
+<img id="myImage" src="file:///home/joao_pedro/Imagens/20230123_135938.jpg" alt="Default Image">
+
+<button onclick="changeImage()">Change Img</button>
+
+<script>
+function changeImage() {
+    var image = document.getElementById('myImage');
+    if (image.src.match("file:///home/joao_pedro/Imagens/2023-01-02_17_02_19.jpg")) {
+        image.src = "file:///home/joao_pedro/Imagens/2023-01-01_17_04_55.jpg.jpg";
+    } else {
+        image.src = "file:///home/joao_pedro/Imagens/2022-12-30%2004.56.31.jpg";
+    }
+}
+</script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Changer</title>
+</head>
+<body>
+    <button onclick="changeImage()">Change Image</button>
+    <br>
+    <img id="image" src="image1.jpg" alt="Image">
+    
+    <script>
+        var images = ['file:///home/joao_pedro/Imagens/sddefault.jpg', 'file:///home/joao_pedro/Imagens/Screenshot_2023-07-04-16-57-50.png', 'file:///home/joao_pedro/Imagens/Screenshot_2022-12-13-21-33-42.png', 'file:///home/joao_pedro/Imagens/images%20(6)%20(c%C3%B3pia%202).jpeg', 'file:///home/joao_pedro/Imagens/images%20(13).jpeg', 'file:///home/joao_pedro/Imagens/images%20(2)%20(c%C3%B3pia%201).jpeg', 'file:///home/joao_pedro/Imagens/corinthans.jpg', 'file:///home/joao_pedro/Imagens/9986608930810069285.jpg', 'file:///home/joao_pedro/Imagens/2022-11-12-15-50-44--1367240672.jpg', 'file:///home/joao_pedro/Imagens/Screenshot_20230222-210352~2(1).png', 'file:///home/joao_pedro/Downloads/noooo.jpeg', 'file:///home/joao_pedro/Downloads/download.jpeg', 'file:///home/joao_pedro/Downloads/oie_J4kSM49uIJwT.png', 'file:///home/joao_pedro/%C3%81rea%20de%20trabalho/area%20de%20trabalh/fotos%20de%20google/claro.png', 'file:///home/joao_pedro/%C3%81rea%20de%20trabalho/area%20de%20trabalh/fotos%20de%20google/index.jpgy', 'file:///home/joao_pedro/Downloads/oo.png', 'file:///home/joao_pedro/Imagens/Screenshot_2023-04-25-19-30-27.png', 'file:///home/joao_pedro/Imagens/images%20(25).jpeg', 'file:///home/joao_pedro/Imagens/images%20(16).png', 'file:///home/joao_pedro/Imagens/images%20(4)%20(c%C3%B3pia%201).jpeg', 'file:///home/joao_pedro/Imagens/download%20(c%C3%B3pia%201).jpeg', 'file:///home/joao_pedro/Imagens/download.png', 'file:///home/joao_pedro/Imagens/2022-12-31_17_46_00.jpg', 'file:///home/joao_pedro/arqivo%20txt/Pou!_files/contact.svg', 'file:///home/joao_pedro/Imagens/2022-11-12-15-49-49--1661317983.jpg'];
+        var currentImageIndex = 0;
+        var imageElement = document.getElementById('image');
+        
+        function changeImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            imageElement.src = images[currentImageIndex];
+        }
+    </script>
+</body>
+</html>
+
+
+</body>
+</html>

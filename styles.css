@@ -1,0 +1,11 @@
+body {
+    /* Set the background image */
+    background-image: url('00.png');
+    /* Set background image properties */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center; /* Center the image */
+    /* If you want a fixed background image */
+    /* background-attachment: fixed; */
+    /* Specify background color in case the image is not available */
+    background-color: #f0f0f0;
+}

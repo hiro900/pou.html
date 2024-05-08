@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.box{
+    width: 226px;
+    height: 226px;
+    position: absolute;
+    top: 279%;
+    left: 48%;
+    transform: translate(87%,-74%);
+}
+.box img{
+    width: 226px;
+    height: 226px;
+}

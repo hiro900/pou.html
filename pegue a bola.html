@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2D Mini-Game</title>
+<style>
+  /* Styling for the game */
+  #game-container {
+    width: 400px;
+    height: 400px;
+    border: 1px solid black;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  #ball {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    position: absolute;
+    border-radius: 50%;
+  }
+
+  /* Styling for game over message */
+  #game-over {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: red;
+  }
+</style>
+</head>
+<body>
+
+<div id="game-container">
+  <div id="ball"></div>
+</div>
+
+<div id="game-over">Game Over!</div>
+
+<script>
+  const gameContainer = document.getElementById('game-container');
+  const ball = document.getElementById('ball');
+  const gameOverMessage = document.getElementById('game-over');
+
+  let score = 0;
+
+  function moveBall() {
+    const maxX = gameContainer.clientWidth - ball.clientWidth;
+    const maxY = gameContainer.clientHeight - ball.clientHeight;
+    const newX = Math.floor(Math.random() * maxX);
+    const newY = Math.floor(Math.random() * maxY);
+    ball.style.left = newX + 'px';
+    ball.style.top = newY + 'px';
+  }
+
+  function increaseScore() {
+    score++;
+    moveBall();
+  }
+
+  function endGame() {
+    gameOverMessage.textContent = `Game Over! Your score: ${score}`;
+    gameOverMessage.style.display = 'block';
+    ball.style.display = 'none';
+    clearInterval(gameInterval);
+  }
+
+  function checkCollision() {
+    const ballRect = ball.getBoundingClientRect();
+    if (ballRect.left < gameContainer.clientWidth / 2 && ballRect.top < gameContainer.clientHeight / 2) {
+      increaseScore();
+    } else {
+      endGame();
+    }
+  }
+
+  gameContainer.addEventListener('click', checkCollision);
+
+  moveBall(); // Initial placement
+  const gameInterval = setInterval(moveBall, 1000); // Move ball every second
+</script>
+
+</body>
+</html>
